@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(15, 15, 68, 0.856);
+    padding: 5vh;
+}
+
+main {
+    background-color: blueviolet;
+    height: 90vh;
+    border-radius: 5vh;
+}
