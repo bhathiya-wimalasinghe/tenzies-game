@@ -5,11 +5,33 @@
 body {
     margin: 0;
     background-color: rgba(15, 15, 68, 0.856);
-    padding: 5vh;
+    padding: 5vh 5vw;
+    display: flex;
 }
 
 main {
     background-color: blueviolet;
     height: 90vh;
+    width: 90vw;
     border-radius: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.die-container {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 3vh;
+}
+
+.die {
+    height: 10vh;
+    width: 10vh;
+    background-color: antiquewhite;
+    border-radius: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
