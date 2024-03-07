@@ -1,6 +1,13 @@
 import "./style.css";
 import Die from "./Die";
 export default function App() {
+  function generateNewDice() {
+    const diceArray = [];
+    for (let i = 0; i < 10; i++) {
+      diceArray.push(Math.ceil(Math.random() * 6));
+    }
+  }
+  generateNewDice();
   return (
     <main>
       <div className="die-container">

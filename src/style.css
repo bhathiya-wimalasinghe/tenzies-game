@@ -35,3 +35,7 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+.die > h2{
+    font-size: 3rem;
+}
