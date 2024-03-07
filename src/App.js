@@ -1,12 +1,16 @@
 import "./style.css";
 import Die from "./Die";
+import React from "react";
 export default function App() {
+  const [diceArray, setDiceArray] = React.useState(generateNewDice());
   function generateNewDice() {
     const diceArray = [];
     for (let i = 0; i < 10; i++) {
       diceArray.push(Math.ceil(Math.random() * 6));
     }
+    return diceArray;
   }
+  const dieElements = diceArray.map((die) => <Die value={die} />);
   generateNewDice();
   return (
     <main>
