@@ -12,7 +12,7 @@ export default function App() {
     for (let i = 0; i < 10; i++) {
       diceArray.push({
         value: Math.ceil(Math.random() * 6),
-        isHeld: true,
+        isHeld: false,
         id: nanoid(),
       });
     }
@@ -20,7 +20,17 @@ export default function App() {
   }
 
   function rollDice() {
-    setDiceArray(generateNewDice());
+    setDiceArray((prevDiceArray) => {
+      return prevDiceArray.map((die) => {
+        return die.isHeld
+          ? die
+          : {
+              value: Math.ceil(Math.random() * 6),
+              isHeld: false,
+              id: nanoid(),
+            };
+      });
+    });
   }
 
   function holdDice(id) {
