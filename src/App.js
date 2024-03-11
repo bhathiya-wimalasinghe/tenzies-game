@@ -10,8 +10,8 @@ export default function App() {
 
   React.useEffect(() => {
     if (
-      diceArray.filter((die) => die.isHeld == true).length == 10 &&
-      diceArray.filter((die) => die.value == diceArray[0].value).length == 10
+      diceArray.filter((die) => die.isHeld === true).length === 10 &&
+      diceArray.filter((die) => die.value === diceArray[0].value).length === 10
     ) {
       setIsWon(true);
     }
