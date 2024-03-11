@@ -5,7 +5,17 @@ import { nanoid } from "nanoid";
 
 export default function App() {
   const [diceArray, setDiceArray] = React.useState(generateNewDice());
+  const [isWon, setIsWon] = React.useState(false);
 
+  React.useEffect(() => {
+    if (
+      diceArray.filter((die) => die.isHeld == true).length == 10 &&
+      diceArray.filter((die) => die.value == diceArray[0].value).length == 10
+    ) {
+      setIsWon(true);
+    }
+  }, [diceArray]);
+  console.log(isWon);
   function generateNewDice() {
     const diceArray = [];
 
