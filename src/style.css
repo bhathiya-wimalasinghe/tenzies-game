@@ -39,6 +39,10 @@ main {
     justify-content: center;
 }
 
+.die:hover{
+    cursor: pointer;
+}
+
 .isHeld{
     background-color: yellow;
 }
@@ -50,7 +54,7 @@ main {
 .btn-roll-dice{
     background-color: rgb(250, 250, 250);
     color: black;
-    width: 20vw;
+    width: 30vw;
     height: 30px;
     border-radius: 2vw;
     border: none;
