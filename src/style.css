@@ -26,6 +26,7 @@ main {
     justify-content: space-evenly;
     grid-template-columns: auto auto auto auto auto;
     gap: 3vh;
+    margin-bottom: 40px;
 }
 
 .die {
@@ -64,6 +65,19 @@ main {
 .btn-roll-dice:active{
     transform: translateY(4px);
 }
+
+.title {
+    font-size: 40px;
+    margin: 0;
+}
+
+.instructions {
+    font-weight: 400;
+    margin: 0px 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
 
 .shake {
     -webkit-animation-name: shake;
