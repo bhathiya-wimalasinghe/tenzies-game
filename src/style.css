@@ -15,8 +15,10 @@ main {
     width: 90vw;
     border-radius: 5vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+
 }
 
 .die-container {
@@ -36,6 +38,66 @@ main {
     justify-content: center;
 }
 
+.isHeld{
+    background-color: yellow;
+}
+
 .die > h2{
     font-size: 3rem;
 }
+
+.btn-roll-dice{
+    background-color: rgb(250, 250, 250);
+    color: black;
+    width: 20vw;
+    height: 30px;
+    border-radius: 2vw;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-roll-dice:hover{
+    cursor: pointer;
+}
+
+.btn-roll-dice:active{
+    transform: translateY(4px);
+}
+
+.shake {
+    -webkit-animation-name: shake;
+    animation-name: shake;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes shake {
+    0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+    }
+    }
+    @keyframes shake {
+    0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+    }
+    } 

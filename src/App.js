@@ -1,31 +1,51 @@
 import "./style.css";
 import Die from "./Die";
 import React from "react";
+import { nanoid } from "nanoid";
+
 export default function App() {
   const [diceArray, setDiceArray] = React.useState(generateNewDice());
+
   function generateNewDice() {
     const diceArray = [];
+
     for (let i = 0; i < 10; i++) {
-      diceArray.push(Math.ceil(Math.random() * 6));
+      diceArray.push({
+        value: Math.ceil(Math.random() * 6),
+        isHeld: true,
+        id: nanoid(),
+      });
     }
     return diceArray;
   }
-  const dieElements = diceArray.map((die) => <Die value={die} />);
-  generateNewDice();
+
+  function rollDice() {
+    setDiceArray(generateNewDice());
+  }
+
+  function holdDice(id) {
+    setDiceArray((prevDiceArray) => {
+      return prevDiceArray.map((die) => {
+        return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
+      });
+    });
+  }
+
+  const dieElements = diceArray.map((die) => (
+    <Die
+      value={die.value}
+      key={die.id}
+      isHeld={die.isHeld}
+      holdDice={() => holdDice(die.id)}
+    />
+  ));
+
   return (
     <main>
-      <div className="die-container">
-        <Die value="1" />
-        <Die value="2" />
-        <Die value="3" />
-        <Die value="4" />
-        <Die value="5" />
-        <Die value="6" />
-        <Die value="7" />
-        <Die value="8" />
-        <Die value="9" />
-        <Die value="10" />
-      </div>
+      <div className="die-container">{dieElements}</div>
+      <button className="btn-roll-dice" onClick={rollDice}>
+        Roll
+      </button>
     </main>
   );
 }
